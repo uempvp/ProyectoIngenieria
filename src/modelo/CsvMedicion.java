@@ -16,7 +16,7 @@ public class CsvMedicion {
 		int throughput= 0;
 		int latencia = 0;
 		double tasaErrores = 0; 
-		float flujoDatos = 0;
+		double flujoDatos = 0;
 	
 	
 		medicion.setFecha(LocalDate.parse(partes[0]));
@@ -26,7 +26,7 @@ public class CsvMedicion {
 		throughput = Integer.parseInt(partes [4]);
 		latencia = Integer.parseInt(partes [5]);
 		tasaErrores = Double.parseDouble(partes[6]);
-		flujoDatos = Float.parseFloat(partes[7]);
+		flujoDatos = Double.parseDouble(partes[7]);
 		medicion.setAnchoBanda(anchoBanda);
 		medicion.setIpConectadas(ipConectadas);
 		medicion.setThroughput(throughput);

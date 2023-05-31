@@ -28,7 +28,7 @@ public class Controlador implements ActionListener {
 					Medicion mRun =gestorMediciones.crearMedicion();
 					gestorMediciones.getListaMediciones().add(mRun);
 					ventana.actualizarTabla(mRun.medicionJTable());
-					ventana.anadirPanelMostrar(mRun.medicionJTexPane());	
+					ventana.anadirPanelMostrar(mRun.medicionJTextPane());	
 					Thread.sleep(3000);
 
 				} catch (InterruptedException e) {
@@ -56,8 +56,8 @@ public class Controlador implements ActionListener {
 		for (Medicion m: gestorMediciones.getListaMediciones()){
 			fila =m.medicionJTable();
 			ventana.actualizarTabla(fila);
-			if(m.medicionJTexPane()!=null) {
-				ventana.anadirPanelMostrar(m.medicionJTexPane());
+			if(m.medicionJTextPane()!=null) {
+				ventana.anadirPanelMostrar(m.medicionJTextPane());
 			}	
 		}		
 	}
@@ -88,7 +88,7 @@ public class Controlador implements ActionListener {
 		ejecutar=false;
 	}
 
-	public void BarChart () {
+	public void barChart () {
 		ventana.setDataBarChart();
 		SortedMap<String, Integer> mapa = new TreeMap<String, Integer> ();
 		mapa = gestorMediciones.mapaReportes();
@@ -99,7 +99,7 @@ public class Controlador implements ActionListener {
 		ventana.ventanaBarChart();
 	}
 
-	public void LineChart () {
+	public void lineChart () {
 		ventana.setDataLineChart ();
 		String [] dias;
 		Vector <String> listaDias = new Vector <String> ();
@@ -140,7 +140,7 @@ public class Controlador implements ActionListener {
 		}
 		else if (e.getActionCommand() == "Reportes diarios") {
 			if(ventana.comprobarDatosTabla()) {
-				this.BarChart();
+				this.barChart();
 			}
 			else {
 				ventana.ventanaNoDatos();	
@@ -148,7 +148,7 @@ public class Controlador implements ActionListener {
 		}
 		else if (e.getActionCommand() == "Ancho banda consumido") {
 			if(ventana.comprobarDatosTabla()) {
-				this.LineChart();
+				this.lineChart();
 			}
 			else {
 				ventana.ventanaNoDatos();	
