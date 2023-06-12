@@ -89,9 +89,9 @@ public class Medicion {
 	}
 	public String medicionJTextPane() {
 		String fechaHora = getFecha().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))+" - "+getHora().format(DateTimeFormatter.ofPattern("kk:mm:ss"))+ " - ";
-		String anchoBandaError ="El ancho de banda de la red ha superado el 90% de su capacidad.\n";
-		String latenciaError= "La red presenta problemas graves de latencia.\n";
-		String tasaError= "La tasa de errores de la red es muy elevada.\n";
+		final String anchoBandaError ="El ancho de banda de la red ha superado el 90% de su capacidad.\n";
+		final String latenciaError= "La red presenta problemas graves de latencia.\n";
+		final String tasaError= "La tasa de errores de la red es muy elevada.\n";
 		String medicionMostrar=null;
 		if(getAnchoBanda()>90) {
 			medicionMostrar=fechaHora+anchoBandaError;

@@ -93,7 +93,7 @@ public class Controlador implements ActionListener {
 		SortedMap<String, Integer> mapa = new TreeMap<String, Integer> ();
 		mapa = gestorMediciones.mapaReportes();
 
-		for (HashMap.Entry <String,Integer> entry : mapa.entrySet ()) {
+		for (Entry <String,Integer> entry : mapa.entrySet ()) {
 			ventana.dataBarChart(entry.getValue(), entry.getKey());
 		}
 		ventana.ventanaBarChart();
